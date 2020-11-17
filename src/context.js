@@ -34,7 +34,6 @@ const AppProvider = ({ children }) => {
     setLoading(true);
     setWaiting(false);
     const response = await axios(url).catch(err => console.log(err));
-    console.log(response);
     if (response) {
       const data = response.data.results;
       if (data.length > 0) {
@@ -83,7 +82,6 @@ const AppProvider = ({ children }) => {
   const handleChange = e => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
     setQuiz({ ...quiz, [name]: value });
   };
 
